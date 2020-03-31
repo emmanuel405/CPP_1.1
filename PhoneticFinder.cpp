@@ -38,10 +38,7 @@ namespace phonetic{
             else{
                 if(text[i+1] == '\0') tmp += text[i];
                 if(tmp.size() == word.size()){
-                    cout << "t="<< tmp << endl;
-                    cout << "w="<< word << endl;
                     a = changeLettre(tmp, word); //worked {false}
-                    cout << a << endl;
                     if(a == true)
                         return state;
                 }
@@ -71,10 +68,6 @@ bool changeLettre(string t, string w){
             t[i] = t[i]+TO_LOWER; // change to lower case.
         if(w[i] > 64 && w[i] < 91)
             w[i] = w[i]+TO_LOWER; // change to lower case.
-        
-        cout << "AGAIN" << endl;
-        cout << "t="<< t << endl;
-        cout << "w="<< w << endl;
         
         if(t[i] == w[i]) continue;
         else if((t[i] == 'i' || t[i] == 'y') && (w[i] != 'i' && w[i] != 'y')) return false;
