@@ -7,8 +7,8 @@ using namespace phonetic;
 
 
 int main(){
-    string text = "I love dog and    I am eating";
-    string word = "Duk";
+    string text = "fbb";
+    string word = "bfp";
 
     string ans = find(text, word);
     cout << "The answer is := " << ans << endl;

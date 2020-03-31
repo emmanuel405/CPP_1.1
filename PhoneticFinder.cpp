@@ -38,6 +38,9 @@ namespace phonetic{
             else{
                 if(text[i+1] == '\0') tmp += text[i];
                 if(tmp.size() == word.size()){
+                    cout << "t=" << tmp << endl;
+                    cout << "w=" << word << endl;
+
                     a = changeLettre(tmp, word); //worked {false}
                     if(a == true)
                         return state;
@@ -77,9 +80,10 @@ bool changeLettre(string t, string w){
         else if((t[i] == 'g' || t[i] == 'j') && (w[i] != 'g' && w[i] != 'j')) return false;
         else if((t[i] == 'v' || t[i] == 'w') && (w[i] != 'v' && w[i] != 'w')) return false;
         else if((t[i] == 'b' || t[i] == 'f' || t[i] == 'p')
-                    && (w[i] != 'b' || w[i] != 'f' || w[i] != 'p')) return false;
+                    && (w[i] != 'b' && w[i] != 'f' && w[i] != 'p')) return false;
         else if((t[i] == 'c' || t[i] == 'k' || t[i] == 'q') 
-                    && (w[i] != 'c' || w[i] != 'k' || w[i] != 'q')) return false;
+                    && (w[i] != 'c' && w[i] != 'k' && w[i] != 'q')) return false;
+
         else if((t[i] == 'a' || t[i] == 'e' || t[i] == 'h' || t[i] == 'l' || t[i] == 'm' || t[i] == 'n' 
                 || t[i] == 'r' || t[i] == 'x') && t[i] != w[i]) return false;
     }
