@@ -28,7 +28,6 @@ namespace phonetic{
         /// work on word of text ///
         ////////////////////////////
         bool a;
-        state = word;
 
         // and stay
         for (int i = 0; text[i] != '\0'; i++){
@@ -37,10 +36,8 @@ namespace phonetic{
             }
             else{
                 if(text[i+1] == '\0') tmp += text[i];
+                state = tmp;
                 if(tmp.size() == word.size()){
-                    cout << "t=" << tmp << endl;
-                    cout << "w=" << word << endl;
-
                     a = changeLettre(tmp, word); //worked {false}
                     if(a == true)
                         return state;
